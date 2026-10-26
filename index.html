@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="vi-VN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>API LLM không kiểm duyệt cho lập trình viên Việt Nam</title>
+<meta name="description" content="API mô hình ngôn ngữ không lọc tư tưởng, tương thích OpenAI, dành cho lập trình viên Việt Nam. Base URL https://uncensored-llm.sbs/v1, streaming, tool calling, tài liệu tiếng Việt.">
+<meta name="keywords" content="api llm không kiểm duyệt, llm không giới hạn, thay thế openai, api ai không censors, mô hình ngôn ngữ tự do">
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
+<meta name="author" content="uncensored-llm.sbs">
+<link rel="canonical" href="https://ryuuless.github.io/uncensored-llm-api-vietnam/">
+<link rel="alternate" hreflang="pt-BR" href="https://brown1023.github.io/llm-api-sem-censura-brasil/">
+<link rel="alternate" hreflang="es-419" href="https://brown1023.github.io/api-llm-sin-censura-latam/">
+<link rel="alternate" hreflang="id-ID" href="https://ryuuless.github.io/uncensored-llm-api-indonesia/">
+<link rel="alternate" hreflang="tr-TR" href="https://askcode24.github.io/sansursuz-llm-api-turkiye/">
+<link rel="alternate" hreflang="de-DE" href="https://askcode24.github.io/uncensored-llm-api-deutschland/">
+<link rel="alternate" hreflang="es-ES" href="https://palazuel0s2004.github.io/api-llm-sin-censura-espana/">
+<link rel="alternate" hreflang="it-IT" href="https://palazuel0s2004.github.io/llm-api-senza-censura-italia/">
+<link rel="alternate" hreflang="en-IN" href="https://nirav0712.github.io/uncensored-llm-api-india/">
+<link rel="alternate" hreflang="en-PH" href="https://nirav0712.github.io/uncensored-llm-api-philippines/">
+<link rel="alternate" hreflang="ar" href="https://mohamedabderrehman.github.io/uncensored-llm-api-arabia/">
+<link rel="alternate" hreflang="ar-EG" href="https://mohamedabderrehman.github.io/uncensored-llm-api-egypt/">
+<link rel="alternate" hreflang="x-default" href="https://uncensored-llm.sbs/">
+<meta name="geo.region" content="VN-SG">
+<meta name="geo.placename" content="Ho Chi Minh City, Vietnam">
+<meta name="ICBM" content="10.8231, 106.6297">
+<meta name="language" content="vi-VN">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:site_name" content="uncensored-llm.sbs">
+<meta property="og:title" content="API LLM không kiểm duyệt cho lập trình viên Việt Nam">
+<meta property="og:description" content="API mô hình ngôn ngữ không lọc tư tưởng, tương thích OpenAI, dành cho lập trình viên Việt Nam. Base URL https://uncensored-llm.sbs/v1, streaming, tool calling, tài liệu tiếng Việt.">
+<meta property="og:url" content="https://ryuuless.github.io/uncensored-llm-api-vietnam/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="llms" href="llms.txt">
+<style>:root{--bg:#08090c;--fg:#e8eaf0;--mut:#9aa3b2;--acc:#7c5cff;--acc2:#22d3a6;--line:#1e2230}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.65 -apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+a{color:var(--acc2);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+header{border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(8,9,12,.86);backdrop-filter:blur(8px);z-index:5}
+header .wrap{display:flex;align-items:center;gap:18px;height:62px}
+.brand{font-weight:700;letter-spacing:-.3px}.brand span{color:var(--acc)}
+nav{margin-left:auto;display:flex;gap:16px;font-size:14px}
+.btn{display:inline-block;padding:10px 18px;border-radius:9px;background:linear-gradient(135deg,var(--acc),#5b7cff);color:#fff;font-weight:600}
+.btn.ghost{background:transparent;border:1px solid var(--line);color:var(--fg)}
+.hero{padding:72px 0 52px;background:radial-gradient(900px 340px at 20% -10%,rgba(124,92,255,.28),transparent 70%)}
+h1{font-size:clamp(28px,4.4vw,46px);line-height:1.14;margin:0 0 18px;letter-spacing:-.8px}
+.sub{color:var(--mut);font-size:18px;max-width:660px;margin:0 0 26px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+section{padding:46px 0;border-top:1px solid var(--line)}
+h2{font-size:24px;letter-spacing:-.4px;margin:0 0 18px}
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.card{border:1px solid var(--line);border-radius:13px;padding:18px;background:#0b0d13}
+.card h3{margin:0 0 8px;font-size:16px}.card p{margin:0;color:var(--mut);font-size:14.5px}
+pre{background:#0b0d13;border:1px solid var(--line);border-radius:12px;padding:16px;overflow:auto;font-size:13.5px;line-height:1.55}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+table{width:100%;border-collapse:collapse;font-size:15px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line)}
+th{color:var(--mut);font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.6px}
+details{border:1px solid var(--line);border-radius:11px;padding:14px 16px;margin-bottom:10px;background:#0b0d13}
+summary{cursor:pointer;font-weight:600}details p{color:var(--mut);margin:10px 0 0}
+footer{border-top:1px solid var(--line);padding:34px 0 60px;color:var(--mut);font-size:14px}
+footer ul{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:10px 22px}</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://uncensored-llm.sbs/#org","name":"uncensored-llm.sbs","url":"https://uncensored-llm.sbs"},{"@type":"WebSite","@id":"https://ryuuless.github.io/uncensored-llm-api-vietnam/#site","url":"https://ryuuless.github.io/uncensored-llm-api-vietnam/","name":"API LLM không kiểm duyệt cho lập trình viên Việt Nam","inLanguage":"vi-VN","publisher":{"@id":"https://uncensored-llm.sbs/#org"}},{"@type":"SoftwareApplication","name":"uncensored-llm.sbs API","applicationCategory":"DeveloperApplication","operatingSystem":"Any","url":"https://ryuuless.github.io/uncensored-llm-api-vietnam/","inLanguage":"vi-VN","description":"API mô hình ngôn ngữ không lọc tư tưởng, tương thích OpenAI, dành cho lập trình viên Việt Nam. Base URL https://uncensored-llm.sbs/v1, streaming, tool calling, tài liệu tiếng Việt.","offers":{"@type":"Offer","priceCurrency":"VND","url":"https://uncensored-llm.sbs","description":"Giá và điều kiện hiện hành: https://uncensored-llm.sbs"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Có thật sự tương thích OpenAI?","acceptedAnswer":{"@type":"Answer","text":"Có. /v1/chat/completions, /v1/models và streaming SSE dùng đúng định dạng sự kiện. SDK chính thức chạy chỉ bằng cách đổi base_url."}},{"@type":"Question","name":"Có gói miễn phí hoặc dùng thử?","acceptedAnswer":{"@type":"Answer","text":"Điều kiện hiện hành được công bố tại https://uncensored-llm.sbs. Mọi thay đổi giá đều thông báo ở đó, không phải trong repo này."}},{"@type":"Question","name":"Nội dung gì bị chặn?","acceptedAnswer":{"@type":"Answer","text":"Nội dung trái pháp luật, bao gồm mọi tài liệu liên quan đến người dưới 18 tuổi. Ngoài phạm vi đó, câu trả lời bám theo yêu cầu."}},{"@type":"Question","name":"Dùng được với Open WebUI hay LibreChat?","acceptedAnswer":{"@type":"Answer","text":"Được. Cả hai nhận base URL kiểu OpenAI, chỉ cần điền https://uncensored-llm.sbs/v1 và API key."}},{"@type":"Question","name":"Bảo vệ API key thế nào?","acceptedAnswer":{"@type":"Answer","text":"Đặt trong biến môi trường theo từng môi trường, xoay vòng định kỳ, không bao giờ để ở frontend hay repo công khai."}}]}]}</script>
+</head>
+<body>
+<header><div class="wrap"><div class="brand">uncensored<span>-llm</span>.sbs</div>
+<nav><a href="#code">Mã nguồn</a><a href="#lat">Độ trễ</a><a href="#faq">Hỏi đáp</a></nav></div></header>
+<main>
+<div class="hero"><div class="wrap"><h1>Mô hình trả lời, không thuyết giáo</h1><p class="sub">API tương thích OpenAI cho dev Việt Nam. Tiếng Việt tự nhiên, streaming, tool calling, không chèn đoạn cảnh báo vào mỗi câu trả lời. Base: https://uncensored-llm.sbs/v1</p>
+<div class="cta"><a class="btn" href="https://uncensored-llm.sbs">Mở API</a><a class="btn ghost" href="#code">Thử ngay</a></div></div></div>
+<section><div class="wrap"><h2>Điều thay đổi với dev Việt Nam</h2><div class="grid">
+<div class="card"><h3>Đổi một dòng</h3><p>Vẫn dùng thư viện openai, chỉ đổi base_url. Phần còn lại giữ nguyên.</p></div>
+<div class="card"><h3>Tiếng Việt tự nhiên</h3><p>Không còn giọng dịch máy, không trả lời nửa chừng.</p></div>
+<div class="card"><h3>Streaming và tools</h3><p>SSE từng token, function calling, JSON mode.</p></div>
+<div class="card"><h3>Không lọc tư tưởng</h3><p>Phạm vi sản phẩm do đội của bạn quyết, không phải nhà cung cấp.</p></div>
+</div></div></section>
+<section id="code"><div class="wrap"><h2>Chạy trong 40 giây</h2><p class="sub">Tương thích openai>=1.0, LangChain, LlamaIndex, Vercel AI SDK, Open WebUI và mọi client cho phép đổi baseURL.</p>
+<pre><code>curl https://uncensored-llm.sbs/v1/chat/completions \
+  -H "Authorization: Bearer $UNLLM_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"model":"uncensored-llm","messages":[{"role":"user","content":"Giải thích ngắn gọn cách tính vốn hóa thị trường của một đồng crypto."}],"stream":true}'</code></pre>
+<pre><code>from openai import OpenAI
+
+client = OpenAI(base_url="https://uncensored-llm.sbs/v1", api_key="sk-...")
+r = client.chat.completions.create(
+    model="uncensored-llm",
+    messages=[{"role": "user", "content": "Giải thích ngắn gọn cách tính vốn hóa thị trường của một đồng crypto."}],
+)
+print(r.choices[0].message.content)</code></pre></div></section>
+<section id="lat"><div class="wrap"><h2>Độ trễ từ thành phố của bạn</h2><p class="sub">Độ trễ phụ thuộc nhà mạng, không phụ thuộc quốc tịch. Hãy đo từ máy bạn trước:</p>
+<pre><code>curl -o /dev/null -s -w '%{time_total}s\n' https://uncensored-llm.sbs/v1/models</code></pre>
+<table><thead><tr><th>Thành phố</th><th>Khu vực</th></tr></thead><tbody>
+<tr><td>Hà Nội</td><td>Miền Bắc</td></tr>
+<tr><td>TP. Hồ Chí Minh</td><td>Miền Nam</td></tr>
+<tr><td>Đà Nẵng</td><td>Miền Trung</td></tr>
+<tr><td>Hải Phòng</td><td>Miền Bắc</td></tr>
+<tr><td>Cần Thơ</td><td>Miền Nam</td></tr>
+<tr><td>Nha Trang</td><td>Miền Trung</td></tr>
+<tr><td>Huế</td><td>Miền Trung</td></tr>
+<tr><td>Vũng Tàu</td><td>Miền Nam</td></tr>
+<tr><td>Đà Lạt</td><td>Tây Nguyên</td></tr>
+<tr><td>Buôn Ma Thuột</td><td>Tây Nguyên</td></tr>
+<tr><td>Quy Nhơn</td><td>Miền Trung</td></tr>
+</tbody></table></div></section>
+<section><div class="wrap"><h2>Thường được dùng cho</h2><div class="grid">
+<div class="card"><h3>Chăm sóc khách hàng</h3><p>Bot giải quyết vấn đề thay vì đọc lại điều khoản.</p></div>
+<div class="card"><h3>Nội dung tiếng Việt</h3><p>Bài viết, kịch bản, email đúng văn phong bản địa.</p></div>
+<div class="card"><h3>Nghiên cứu bảo mật</h3><p>Kiểm thử tấn công có văn bản cho phép của khách hàng.</p></div>
+<div class="card"><h3>Truyện người lớn (18+)</h3><p>Cảnh thân mật giữa người lớn, không cắt cảnh.</p></div>
+</div></div></section>
+<section id="faq"><div class="wrap"><h2>Câu hỏi thực tế</h2>
+<details><summary>Có thật sự tương thích OpenAI?</summary><p>Có. /v1/chat/completions, /v1/models và streaming SSE dùng đúng định dạng sự kiện. SDK chính thức chạy chỉ bằng cách đổi base_url.</p></details>
+<details><summary>Có gói miễn phí hoặc dùng thử?</summary><p>Điều kiện hiện hành được công bố tại https://uncensored-llm.sbs. Mọi thay đổi giá đều thông báo ở đó, không phải trong repo này.</p></details>
+<details><summary>Nội dung gì bị chặn?</summary><p>Nội dung trái pháp luật, bao gồm mọi tài liệu liên quan đến người dưới 18 tuổi. Ngoài phạm vi đó, câu trả lời bám theo yêu cầu.</p></details>
+<details><summary>Dùng được với Open WebUI hay LibreChat?</summary><p>Được. Cả hai nhận base URL kiểu OpenAI, chỉ cần điền https://uncensored-llm.sbs/v1 và API key.</p></details>
+<details><summary>Bảo vệ API key thế nào?</summary><p>Đặt trong biến môi trường theo từng môi trường, xoay vòng định kỳ, không bao giờ để ở frontend hay repo công khai.</p></details>
+</div></section>
+</main>
+<footer><div class="wrap"><p>Giá và điều kiện hiện hành: https://uncensored-llm.sbs</p><p>Tài liệu này bằng ngôn ngữ khác</p><ul>
+<li><a href="https://brown1023.github.io/llm-api-sem-censura-brasil/" hreflang="pt-BR" lang="pt-BR">pt-BR</a></li>
+<li><a href="https://brown1023.github.io/api-llm-sin-censura-latam/" hreflang="es-419" lang="es-419">es-419</a></li>
+<li><a href="https://ryuuless.github.io/uncensored-llm-api-indonesia/" hreflang="id-ID" lang="id-ID">id-ID</a></li>
+<li><a href="https://askcode24.github.io/sansursuz-llm-api-turkiye/" hreflang="tr-TR" lang="tr-TR">tr-TR</a></li>
+<li><a href="https://askcode24.github.io/uncensored-llm-api-deutschland/" hreflang="de-DE" lang="de-DE">de-DE</a></li>
+<li><a href="https://palazuel0s2004.github.io/api-llm-sin-censura-espana/" hreflang="es-ES" lang="es-ES">es-ES</a></li>
+<li><a href="https://palazuel0s2004.github.io/llm-api-senza-censura-italia/" hreflang="it-IT" lang="it-IT">it-IT</a></li>
+<li><a href="https://nirav0712.github.io/uncensored-llm-api-india/" hreflang="en-IN" lang="en-IN">en-IN</a></li>
+<li><a href="https://nirav0712.github.io/uncensored-llm-api-philippines/" hreflang="en-PH" lang="en-PH">en-PH</a></li>
+<li><a href="https://mohamedabderrehman.github.io/uncensored-llm-api-arabia/" hreflang="ar" lang="ar">ar</a></li>
+<li><a href="https://mohamedabderrehman.github.io/uncensored-llm-api-egypt/" hreflang="ar-EG" lang="ar-EG">ar-EG</a></li>
+</ul><p>uncensored-llm.sbs — API tương thích OpenAI. Nội dung trái pháp luật, gồm mọi tài liệu liên quan đến người dưới 18 tuổi, bị chặn. Phần còn lại thuộc trách nhiệm người gọi.</p></div></footer>
+</body>
+</html>

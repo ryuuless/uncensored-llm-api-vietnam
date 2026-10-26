@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Sitemap: https://ryuuless.github.io/uncensored-llm-api-vietnam/sitemap.xml
+
+# API LLM không kiểm duyệt cho lập trình viên Việt Nam
+# API mô hình ngôn ngữ không lọc tư tưởng, tương thích OpenAI, dành cho lập trình viên Việt Nam. Base URL https://uncensored-llm.sbs/v1, streaming, tool calling, tài liệu tiếng Việt.
